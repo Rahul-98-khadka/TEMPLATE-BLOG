@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Register</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images\logo.jpg" alt="">
+        </div>
+        <i class="fa fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Aboutus.html">About</a></li>
+            <!-- <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Login</a></li> -->
+            <li>
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                </a>
+                <ul>
+                    <li><a href="admin/posts/index.html">Dashboard</a></li>
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="auth-content">
+
+        <form action="register.html" onsubmit="return validate()" method="post">
+            <h2 class="form-title">Register</h2>
+
+            <!-- <div class="msg error">
+        <li>Username required</li>
+      </div> -->
+
+            <div>
+                <label>Username</label>
+                <input type="text" name="username" id="user" class="text-input">
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" id="mail" class="text-input">
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" id="pass" class="text-input">
+            </div>
+            <div>
+                <label>Password Confirmation</label>
+                <input type="password" name="passwordConf" id="cpass" class="text-input">
+            </div>
+            <div>
+                <button type="submit" name="register-btn" class="btn btn-big">Register</button>
+            </div>
+            <p>Or <a href="login.html">Sign In</a></p>
+        </form>
+
+    </div>
+
+
+    <!-- JQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="js/scripts.js"></script>
+
+    <script>
+        var username = document.getElementById("user");
+        var email = document.getElementById("mail");
+        var password = document.getElementById("pass");
+        console.log(password)
+        var confirmpassword = document.getElementById("cpass");
+        console.log(confirmpassword)
+        function validate() {
+
+            if (username.value.trim() == ""){
+                alert("Username Should be filled!!");
+                return false;
+            }
+
+            if (email.value.trim() == "") {
+                alert("Email Id Should be filled!!");
+                return false;
+                }
+            if (password.value.trim() == ""){
+                alert("Password Should be filled!!");
+                return false;
+            }
+            if (confirmpassword.value.trim() == ""){
+                alert("Confirm Password Should be filled!!");
+                return false;
+            }
+            if (password.value.trim() != confirmpassword.value.trim()) {
+                alert("Passwords doesn't Match!!");
+                return false;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
